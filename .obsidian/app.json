@@ -1,0 +1,9 @@
+{
+  "promptDelete": false,
+  "readableLineLength": false,
+  "showLineNumber": true,
+  "showInlineTitle": true,
+  "spellcheck": false,
+  "attachmentFolderPath": "./笔记图片",
+  "newFileLocation": "current"
+}

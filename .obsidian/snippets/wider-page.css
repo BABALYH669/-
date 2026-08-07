@@ -1,0 +1,133 @@
+/* =============================================
+   Obsidian — 文本居中 + 宽表格（flexbox 方案）
+   ============================================= */
+
+body {
+  --page-width: 1100px;
+  --text-width:  800px;
+}
+
+/* ---------- sizer：用 flex 列布局，子元素横向居中 ---------- */
+.markdown-reading-view .markdown-preview-sizer,
+.markdown-preview-view .markdown-preview-sizer,
+.markdown-source-view .cm-sizer,
+.markdown-source-view.mod-cm6 .cm-content {
+  max-width: var(--page-width) !important;
+  margin: 0 auto;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- 文本元素：固定宽，flex 会帮我们居中 ---------- */
+.markdown-preview-view p,
+.markdown-preview-view h1, .markdown-preview-view h2,
+.markdown-preview-view h3, .markdown-preview-view h4,
+.markdown-preview-view h5, .markdown-preview-view h6,
+.markdown-preview-view ul, .markdown-preview-view ol,
+.markdown-preview-view blockquote,
+.markdown-preview-view pre:not(.frontmatter),
+.markdown-preview-view hr,
+.markdown-preview-view .callout {
+  width: var(--text-width) !important;
+  max-width: 100%;
+}
+
+/* 编辑视图的行 */
+.markdown-source-view .cm-line {
+  width: var(--text-width) !important;
+  max-width: 100%;
+}
+
+/* ---------- 表格：撑满全宽 ---------- */
+.markdown-preview-view table,
+.cm-content table {
+  width: 100% !important;
+  max-width: 100% !important;
+  align-self: stretch;
+  table-layout: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-preview-view th,
+.markdown-preview-view td,
+.cm-content th,
+.cm-content td {
+  padding: 4px 10px;
+  line-height: 1.4;
+  font-size: 0.92em;
+}
+
+/* ---------- 紧凑间距 ---------- */
+.markdown-preview-view p,
+.cm-content .cm-line {
+  line-height: 1.5;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.markdown-preview-view h1, .markdown-preview-view h2,
+.markdown-preview-view h3, .markdown-preview-view h4,
+.markdown-preview-view h5, .markdown-preview-view h6 {
+  margin-top: 0.6em;
+  margin-bottom: 0.15em;
+  line-height: 1.25;
+}
+.markdown-preview-view ul > li,
+.markdown-preview-view ol > li {
+  margin-block: 0.03em;
+  line-height: 1.5;
+}
+.markdown-preview-view blockquote {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  padding: 0.3em 1em;
+}
+.markdown-preview-view pre {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  padding: 0.5em 1em;
+}
+.markdown-preview-view hr {
+  margin-block: 0.6em;
+}
+
+/* ---------- wide-page ---------- */
+.wide-page .markdown-preview-sizer,
+.wide-page .cm-sizer,
+.wide-page.mod-cm6 .cm-content {
+  max-width: 1300px !important;
+}
+.wide-page p, .wide-page h1, .wide-page h2, .wide-page h3,
+.wide-page h4, .wide-page h5, .wide-page h6,
+.wide-page ul, .wide-page ol,
+.wide-page blockquote, .wide-page pre,
+.wide-page .cm-line {
+  width: 900px !important;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 950px) {
+  .markdown-reading-view .markdown-preview-sizer,
+  .markdown-preview-view .markdown-preview-sizer,
+  .markdown-source-view .cm-sizer,
+  .markdown-source-view.mod-cm6 .cm-content {
+    max-width: 100% !important;
+    padding: 0 1rem;
+    align-items: stretch;
+  }
+  .markdown-preview-view p, .markdown-preview-view h1,
+  .markdown-preview-view h2, .markdown-preview-view h3,
+  .markdown-preview-view h4, .markdown-preview-view h5,
+  .markdown-preview-view h6,
+  .markdown-preview-view ul, .markdown-preview-view ol,
+  .markdown-preview-view blockquote, .markdown-preview-view pre,
+  .markdown-source-view .cm-line {
+    width: 100% !important;
+  }
+}
+
+/* ---------- 嵌入 ---------- */
+.markdown-embed .markdown-embed-content .markdown-preview-sizer {
+  max-width: 100% !important;
+  display: block !important;
+}

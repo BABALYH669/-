@@ -1,0 +1,11 @@
+{
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "wider-page"
+  ],
+  "theme": "moonstone",
+  "baseFontSize": 23,
+  "showRibbon": false,
+  "showViewHeader": false
+}
