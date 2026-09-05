@@ -430,7 +430,7 @@ DMA Normal 模式**传完 CNDTR 指定数量后自动停止**；此时 ADC 即�
 关 ADC(ADON=0) → 关 DMA(EN=0) → 等待硬件确认关闭 → 重设 CNDTR → 开 DMA → 开 ADC → 置 SWSTART 触发转换
 ```
 
-**为什么改 CNDTR 前必须关 DMA**：STM32 手册要求——`CNDTR` 只能在 DMA 通道**关闭（EN=0）**时加载；通道运行中写 CNDTR **无效/可能出错**。所以例程先清 CCR 的 EN 位、`while` 等它真正关掉，再写 CNDTR。
+**为什么改 CNDTR 前必须关 DMA**：STM32 手册要求——`CNDTR` 只能在 DMA 通道**关闭（EN=0)** 时加载；通道运行中写 CNDTR **无效/可能出错**。所以例程先清 CCR 的 EN 位、`while` 等它真正关掉，再写 CNDTR。
 
 > 之所以不用 `HAL_ADC_Start_DMA` 直接重启，是因为 HAL 状态机在部分场景会冲突，寄存器级操作更可靠。
 

@@ -1,0 +1,13 @@
+{
+  "apiKey": "sk-eddeaf015eb7437eafcc9dcb86f537ac",
+  "model": "deepseek-chat",
+  "apiBase": "https://api.deepseek.com",
+  "provider": "deepseek",
+  "sourceLang": "auto",
+  "targetLang": "zh",
+  "temperature": 0.3,
+  "maxTokens": 4096,
+  "enableHover": true,
+  "hoverDelay": 800,
+  "enableFullDocReplace": false
+}
