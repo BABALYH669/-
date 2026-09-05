@@ -6,6 +6,6 @@
   ],
   "theme": "moonstone",
   "baseFontSize": 20,
-  "showRibbon": false,
+  "showRibbon": true,
   "showViewHeader": false
 }
