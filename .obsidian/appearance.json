@@ -5,7 +5,7 @@
     "wider-page"
   ],
   "theme": "moonstone",
-  "baseFontSize": 20,
+  "baseFontSize": 23,
   "showRibbon": false,
   "showViewHeader": false
 }
